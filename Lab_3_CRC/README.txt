@@ -13,11 +13,11 @@ SETUP (DO THIS ONCE ON EACH COMPUTER)
 Nothing needs to be installed with pip, and no internet is needed.
 You only need Python 3 (tested on 3.12 and 3.14).
 
-1. Copy this Lab_3 folder from the pen drive to the Desktop.
+1. Copy this Lab_3_CRC folder from the pen drive to the Desktop.
 
 2. Open a terminal inside the folder:
-     Windows: open Lab_3 in File Explorer, click the address bar, type cmd, press Enter.
-     Ubuntu : open Lab_3 in Files, right-click empty space, choose Open in Terminal.
+     Windows: open Lab_3_CRC in File Explorer, click the address bar, type cmd, press Enter.
+     Ubuntu : open Lab_3_CRC in Files, right-click empty space, choose Open in Terminal.
    To open a second terminal, repeat this step.
 
 3. Check Python:
@@ -33,7 +33,7 @@ You only need Python 3 (tested on 3.12 and 3.14).
 
 RUN IT
 ------
-In the terminal inside Lab_3:
+In the terminal inside Lab_3_CRC:
     python crc.py
 
 Type these answers when asked (each followed by Enter):

@@ -18,11 +18,11 @@ SETUP (DO THIS ONCE ON EACH COMPUTER)
 Nothing needs to be installed with pip, and no internet is needed.
 You only need Python 3 (tested on 3.12 and 3.14).
 
-1. Copy this Lab_9 folder from the pen drive to the Desktop.
+1. Copy this Lab_9_Web_Server folder from the pen drive to the Desktop.
 
 2. Open a terminal inside the folder:
-     Windows: open Lab_9 in File Explorer, click the address bar, type cmd, press Enter.
-     Ubuntu : open Lab_9 in Files, right-click empty space, choose Open in Terminal.
+     Windows: open Lab_9_Web_Server in File Explorer, click the address bar, type cmd, press Enter.
+     Ubuntu : open Lab_9_Web_Server in Files, right-click empty space, choose Open in Terminal.
    To open a second terminal, repeat this step.
 
 3. Check Python:
@@ -38,7 +38,7 @@ You only need Python 3 (tested on 3.12 and 3.14).
 
 RUN IT (ONE COMPUTER)
 ---------------------
-Terminal 1, inside Lab_9 - start the server first:
+Terminal 1, inside Lab_9_Web_Server - start the server first:
     python server.py
 
     It shows: Web Server is running on port 8000...
@@ -52,7 +52,7 @@ Also try these:
     http://127.0.0.1:8000/notes.txt
     http://127.0.0.1:8000/missing.html     (404 File not found)
 
-Option 2 - socket client. Terminal 2, inside Lab_9:
+Option 2 - socket client. Terminal 2, inside Lab_9_Web_Server:
     python client.py
 
 EXPECTED OUTPUT

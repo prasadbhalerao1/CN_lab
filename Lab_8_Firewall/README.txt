@@ -17,11 +17,11 @@ SETUP (DO THIS ONCE ON EACH COMPUTER)
 Nothing needs to be installed with pip, and no internet is needed (UFW installs from offline_packages).
 You only need Python 3 (tested on 3.12 and 3.14).
 
-1. Copy this Lab_8 folder from the pen drive to the Desktop.
+1. Copy this Lab_8_Firewall folder from the pen drive to the Desktop.
 
 2. Open a terminal inside the folder:
-     Windows: open Lab_8 in File Explorer, click the address bar, type cmd, press Enter.
-     Ubuntu : open Lab_8 in Files, right-click empty space, choose Open in Terminal.
+     Windows: open Lab_8_Firewall in File Explorer, click the address bar, type cmd, press Enter.
+     Ubuntu : open Lab_8_Firewall in Files, right-click empty space, choose Open in Terminal.
    To open a second terminal, repeat this step.
 
 3. Check Python:
@@ -37,7 +37,7 @@ You only need Python 3 (tested on 3.12 and 3.14).
 
 PART A - CHECK THE PROGRAMS WORK (ONE COMPUTER, NO FIREWALL NEEDED)
 ------------------------------------------------------------------
-You need two terminals, both inside Lab_8.
+You need two terminals, both inside Lab_8_Firewall.
 
 Terminal 1:  python server.py
              Shows: Server is waiting for connection...
@@ -61,7 +61,7 @@ Otherwise enabling the firewall can lock you out.
 Find the IPs. On each computer run hostname -I (Ubuntu) or ipconfig (Windows).
 The examples use server 192.168.1.10 and authorised client 192.168.1.20. Use your real IPs.
 
-Do steps 1 to 7 on the UBUNTU SERVER, in a terminal inside Lab_8.
+Do steps 1 to 7 on the UBUNTU SERVER, in a terminal inside Lab_8_Firewall.
 
 Step 1: Install UFW. First check whether it is already there:
     sudo ufw version
@@ -100,13 +100,13 @@ Step 7: View the rules and start the server
     sudo ufw status numbered
     python3 server.py
 
-Step 8: On the AUTHORISED client (192.168.1.20), inside Lab_8:
+Step 8: On the AUTHORISED client (192.168.1.20), inside Lab_8_Firewall:
     python client.py 192.168.1.10
   Expected:
     Connected to server!
     Server: Message received successfully!
 
-Step 9: On the UNAUTHORISED client (any other IP), inside Lab_8:
+Step 9: On the UNAUTHORISED client (any other IP), inside Lab_8_Firewall:
     python client.py 192.168.1.10
   Expected after 3 seconds:
     Connection timed out! Firewall may be blocking traffic.
@@ -126,14 +126,14 @@ PART C - ONLY ONE WINDOWS COMPUTER WITH WSL UBUNTU
 WSL Ubuntu acts as the server and Windows acts as the client.
 
 1. In the Ubuntu (WSL) terminal, go to the lab. Replace the path with your real one:
-       cd /mnt/c/Users/<you>/Desktop/Lab_8
+       cd /mnt/c/Users/<you>/Desktop/Lab_8_Firewall
 2. Do Steps 1 to 6 of Part B. In Step 6, use the Windows address that WSL sees:
        ip route show default | awk '{print $3}'
 3. Find the WSL IP:
        hostname -I
 4. Start the server in WSL:
        python3 server.py
-5. In a Windows terminal inside Lab_8:
+5. In a Windows terminal inside Lab_8_Firewall:
        python client.py <wsl_ip>
 6. Delete the allow rule and repeat step 5. It should time out.
 7. Clean up as in Step 10.

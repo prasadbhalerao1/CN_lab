@@ -18,11 +18,11 @@ SETUP (DO THIS ONCE ON EACH COMPUTER)
 Nothing needs to be installed with pip, and no internet is needed.
 You only need Python 3 (tested on 3.12 and 3.14).
 
-1. Copy this Lab_6 folder from the pen drive to the Desktop.
+1. Copy this Lab_6_TCP_Sockets folder from the pen drive to the Desktop.
 
 2. Open a terminal inside the folder:
-     Windows: open Lab_6 in File Explorer, click the address bar, type cmd, press Enter.
-     Ubuntu : open Lab_6 in Files, right-click empty space, choose Open in Terminal.
+     Windows: open Lab_6_TCP_Sockets in File Explorer, click the address bar, type cmd, press Enter.
+     Ubuntu : open Lab_6_TCP_Sockets in Files, right-click empty space, choose Open in Terminal.
    To open a second terminal, repeat this step.
 
 3. Check Python:
@@ -39,7 +39,7 @@ You only need Python 3 (tested on 3.12 and 3.14).
 IMPORTANT: each server here handles ONE client and then exits by itself. This frees its
 port. To run a task again, start its server again first.
 
-You need two terminals, both inside Lab_6.
+You need two terminals, both inside Lab_6_TCP_Sockets.
 
 TASK 1 - HELLO
 --------------
@@ -63,7 +63,7 @@ Terminal 2:  python file_client.py
 Client shows:  File received successfully!
 Server shows:  File sent successfully!
 
-The file is saved in Lab_6 as received_sample.txt.
+The file is saved in Lab_6_TCP_Sockets as received_sample.txt.
 Repeat the two commands with sample_image.png to transfer a binary file.
 Enter only the file name, not a path. A name that is not in server_files gives:
     ERROR: File not found

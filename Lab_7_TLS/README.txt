@@ -18,11 +18,11 @@ SETUP (DO THIS ONCE ON EACH COMPUTER)
 Nothing needs to be installed with pip, and no internet is needed.
 You only need Python 3 (tested on 3.12 and 3.14).
 
-1. Copy this Lab_7 folder from the pen drive to the Desktop.
+1. Copy this Lab_7_TLS folder from the pen drive to the Desktop.
 
 2. Open a terminal inside the folder:
-     Windows: open Lab_7 in File Explorer, click the address bar, type cmd, press Enter.
-     Ubuntu : open Lab_7 in Files, right-click empty space, choose Open in Terminal.
+     Windows: open Lab_7_TLS in File Explorer, click the address bar, type cmd, press Enter.
+     Ubuntu : open Lab_7_TLS in Files, right-click empty space, choose Open in Terminal.
    To open a second terminal, repeat this step.
 
 3. Check Python:
@@ -40,7 +40,7 @@ The certificate is already in this folder, so OpenSSL is not needed to run the l
 
 RUN IT (ONE COMPUTER)
 ---------------------
-You need two terminals, both inside Lab_7.
+You need two terminals, both inside Lab_7_TLS.
 
 Terminal 1 - start the server first:
     python server.py
@@ -66,7 +66,7 @@ Server:
 HOW THE CERTIFICATE WAS MADE (AND HOW TO MAKE A NEW ONE)
 --------------------------------------------------------
 Only do this if the certificate has expired or your teacher wants to see it made. It needs
-OpenSSL. Run it in Windows cmd or an Ubuntu terminal inside Lab_7, as one line:
+OpenSSL. Run it in Windows cmd or an Ubuntu terminal inside Lab_7_TLS, as one line:
 
     openssl req -x509 -newkey rsa:2048 -sha256 -nodes -days 365 -keyout server.key -out server.crt -subj "/CN=localhost" -addext "subjectAltName=DNS:localhost,IP:127.0.0.1"
 

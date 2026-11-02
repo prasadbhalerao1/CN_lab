@@ -13,11 +13,11 @@ SETUP (DO THIS ONCE ON EACH COMPUTER)
 Nothing needs to be installed with pip, and no internet is needed except for looking up real internet domains.
 You only need Python 3 (tested on 3.12 and 3.14).
 
-1. Copy this Lab_4 folder from the pen drive to the Desktop.
+1. Copy this Lab_4_DNS folder from the pen drive to the Desktop.
 
 2. Open a terminal inside the folder:
-     Windows: open Lab_4 in File Explorer, click the address bar, type cmd, press Enter.
-     Ubuntu : open Lab_4 in Files, right-click empty space, choose Open in Terminal.
+     Windows: open Lab_4_DNS in File Explorer, click the address bar, type cmd, press Enter.
+     Ubuntu : open Lab_4_DNS in Files, right-click empty space, choose Open in Terminal.
    To open a second terminal, repeat this step.
 
 3. Check Python:
@@ -33,7 +33,7 @@ You only need Python 3 (tested on 3.12 and 3.14).
 
 RUN IT
 ------
-In the terminal inside Lab_4:
+In the terminal inside Lab_4_DNS:
     python dns.py
 
 Forward lookup:

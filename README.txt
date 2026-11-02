@@ -4,15 +4,15 @@ COMPUTER NETWORKS LAB PROGRAMS - EXPERIMENTS 2 TO 9
 Each Lab_N folder works on its own. Copy just that folder to another computer and follow its
 README.txt, which has every step and command from scratch.
 
-  Lab     Topic                                   Needs server?   Port
-  Lab_2   Go-Back-N and Selective Repeat          No              None
-  Lab_3   CRC error detection                     No              None
-  Lab_4   DNS lookup                              No              None
-  Lab_5   UDP file transfer                       Yes             UDP 5000
-  Lab_6   TCP Hello, file transfer, calculator    Yes             TCP 5000, 5001, 5002
-  Lab_7   TLS secure communication                Yes             TCP 8443
-  Lab_8   Firewall configuration and TCP test     Yes             TCP 5000
-  Lab_9   Web server and HTTP client              Yes             TCP 8000
+  Lab                      Topic                                   Needs server?   Port
+  Lab_2_Sliding_Window     Go-Back-N and Selective Repeat          No              None
+  Lab_3_CRC                CRC error detection                     No              None
+  Lab_4_DNS                DNS lookup                              No              None
+  Lab_5_UDP_File_Transfer  UDP file transfer                       Yes             UDP 5000
+  Lab_6_TCP_Sockets        TCP Hello, file transfer, calculator    Yes             TCP 5000, 5001, 5002
+  Lab_7_TLS                TLS secure communication                Yes             TCP 8443
+  Lab_8_Firewall           Firewall configuration and TCP test     Yes             TCP 5000
+  Lab_9_Web_Server         Web server and HTTP client              Yes             TCP 8000
 
 REQUIREMENTS
 - Python 3 only. All programs use the standard library, so there is no pip install step.

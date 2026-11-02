@@ -18,11 +18,11 @@ SETUP (DO THIS ONCE ON EACH COMPUTER)
 Nothing needs to be installed with pip, and no internet is needed.
 You only need Python 3 (tested on 3.12 and 3.14).
 
-1. Copy this Lab_5 folder from the pen drive to the Desktop.
+1. Copy this Lab_5_UDP_File_Transfer folder from the pen drive to the Desktop.
 
 2. Open a terminal inside the folder:
-     Windows: open Lab_5 in File Explorer, click the address bar, type cmd, press Enter.
-     Ubuntu : open Lab_5 in Files, right-click empty space, choose Open in Terminal.
+     Windows: open Lab_5_UDP_File_Transfer in File Explorer, click the address bar, type cmd, press Enter.
+     Ubuntu : open Lab_5_UDP_File_Transfer in Files, right-click empty space, choose Open in Terminal.
    To open a second terminal, repeat this step.
 
 3. Check Python:
@@ -38,7 +38,7 @@ You only need Python 3 (tested on 3.12 and 3.14).
 
 RUN IT (ONE COMPUTER)
 ---------------------
-You need two terminals, both inside Lab_5.
+You need two terminals, both inside Lab_5_UDP_File_Transfer.
 
 Terminal 1 - start the server first:
     python server.py
