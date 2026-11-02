@@ -7,40 +7,45 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))  # Works from any folder
 
 HOST = "0.0.0.0"
 PORT = 5001
-BUFFER_SIZE = 1024
+BUFFER_SIZE = 60000
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-server.bind((HOST, PORT))
-server.listen(1)
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+server_socket.bind((HOST, PORT))
+server_socket.listen(1)
 
-print("File Server is waiting...")
+print("TCP Server is waiting for file...")
 
-conn, addr = server.accept()
-print("Connected by:", addr)
+client_socket, client_address = server_socket.accept()
 
-# Receive filename
-filename = os.path.basename(conn.recv(BUFFER_SIZE).decode())
-filepath = os.path.join("..", "server_files", filename)
+# Receive filename and file size together, like: sample.txt|93
+data = client_socket.recv(BUFFER_SIZE)
+filename, filesize = data.decode().split("|")
+filename = os.path.basename(filename)
+filesize = int(filesize)
 
-if os.path.isfile(filepath):
-    conn.sendall(b"OK")
+print("Receiving:", filename)
 
-    with open(filepath, "rb") as file:
+output_file = "received_" + filename
 
-        while True:
-            data = file.read(BUFFER_SIZE)
+# Send READY
+client_socket.sendall(b"READY")
 
-            if not data:
-                break
+received = 0
 
-            conn.sendall(data)
+with open(output_file, "wb") as file:
 
-    print("File sent successfully!")
+    while received < filesize:
 
-else:
-    conn.sendall(b"NO")
-    print("File not found:", filename)
+        data = client_socket.recv(BUFFER_SIZE)
 
-conn.close()
-server.close()
+        file.write(data)
+        received += len(data)
+
+        client_socket.sendall(b"ACK")
+
+print("File received successfully!")
+print("Saved as:", output_file)
+
+client_socket.close()
+server_socket.close()

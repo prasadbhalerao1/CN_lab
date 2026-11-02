@@ -98,13 +98,16 @@ Task 1:  Terminal 1: python hello_server.py
          Terminal 2: python hello_client.py
          Client shows: Server: Hello Client!
 
-Task 2:  Terminal 1: python file_server.py
+Task 2:  This task works the other way round from the full version: the client sends a
+         file TO the server.
+         Terminal 1: python file_server.py
          Terminal 2: python file_client.py
-                     Enter file name: sample.txt
-         Client shows: File received successfully!
-         The file is saved in the simple folder as received_sample.txt.
-         The server reads from ..\server_files. Enter only the file name, not a path.
-         A name that does not exist gives: File not found on server!
+                     Enter file name: ../server_files/sample.txt
+         Client shows: File sent successfully!
+         Server shows: File received successfully!
+                       Saved as: received_sample.txt
+         The file is saved in the simple folder. Try ../server_files/sample_image.png too,
+         or type the path of any other file. File names must not contain the | character.
 
 Task 3:  Terminal 1: python calc_server.py
          Terminal 2: python calc_client.py
@@ -119,7 +122,7 @@ For two computers, add the server's IP: python hello_client.py 192.168.1.35
 Limits of the simple version:
 - The calculator expects real numbers. Typing letters stops the server with an error, so start
   it again.
-- If you copy only the simple folder, also copy server_files beside it for Task 2.
+- If you copy only the simple folder, type the path of a file that exists on that computer for Task 2.
 
 TWO COMPUTERS
 -------------

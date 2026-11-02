@@ -7,34 +7,37 @@ import sys
 os.chdir(os.path.dirname(os.path.abspath(__file__)))  # Works from any folder
 
 # Usage: python file_client.py [server_ip]   (no IP = same computer)
-HOST = sys.argv[1] if len(sys.argv) > 1 else "127.0.0.1"
+SERVER_IP = sys.argv[1] if len(sys.argv) > 1 else "127.0.0.1"
 PORT = 5001
-BUFFER_SIZE = 1024
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((HOST, PORT))
+BUFFER_SIZE = 60000
 
 filename = input("Enter file name: ")
-client.sendall(filename.encode())
 
-# Server replies OK or NO first
-status = client.recv(2)
+filesize = os.path.getsize(filename)
 
-if status == b"OK":
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client_socket.connect((SERVER_IP, PORT))
 
-    with open("received_" + filename, "wb") as file:
+# Send filename and file size together, like: sample.txt|93
+client_socket.sendall(f"{os.path.basename(filename)}|{filesize}".encode())
+
+# Receive READY
+data = client_socket.recv(BUFFER_SIZE)
+
+if data == b"READY":
+
+    with open(filename, "rb") as file:
 
         while True:
-            data = client.recv(BUFFER_SIZE)
+            data = file.read(BUFFER_SIZE)
 
             if not data:
                 break
 
-            file.write(data)
+            client_socket.sendall(data)
 
-    print("File received successfully!")
+            ack = client_socket.recv(BUFFER_SIZE)
 
-else:
-    print("File not found on server!")
+    print("File sent successfully!")
 
-client.close()
+client_socket.close()
