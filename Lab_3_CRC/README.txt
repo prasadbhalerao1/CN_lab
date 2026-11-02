@@ -37,33 +37,33 @@ In the terminal inside Lab_3_CRC:
     python crc.py
 
 Type these answers when asked (each followed by Enter):
-    Enter the message: Hi
+    Enter message: Hi
     Enter ASCII size (7 or 8): 8
-    Enter generator polynomial: 1101
-    Enter bit position to flip (0 for no error): 5
+    Enter generator: 1101
+    Enter error position (0 for no error): 5
 
 EXPECTED OUTPUT
 ---------------
-    Original Binary Data: 0100100001101001
+    Binary Data: 0100100001101001
     CRC Remainder: 001
     Transmitted Codeword: 0100100001101001001
-
     Received Data: 0100000001101001001
     Receiver Remainder: 001
     Error Detected!
-    Requesting retransmission...
+    Retransmitting...
     Retransmitted Data: 0100100001101001001
-    New Remainder: 000
     Error Corrected Successfully!
 
-To see the no-error case, run it again and enter 0 for the bit position:
+To see the no-error case, run it again and enter 0 for the error position:
     No Error Detected!
 
 NOTES
 -----
-- The generator must contain only 0 and 1, and must start and end with 1.
-- Bit position 1 is the leftmost bit of the codeword. The result shows the valid range.
+- Use a valid generator such as 1101: only 0 and 1, starting and ending with 1. The program
+  does not check this, so a bad generator gives an error or a wrong result.
+- Error position 1 is the leftmost bit of the codeword. A position past the end flips nothing,
+  so it behaves like 0.
 - A remainder of all zeros means no error was detected.
 - CRC only detects errors. The program fixes the data by retransmitting the original
   codeword; CRC itself does not correct the bit.
-- With 7-bit ASCII, characters outside normal ASCII are rejected.
+- Use normal English characters. The program does not check for characters outside ASCII.
