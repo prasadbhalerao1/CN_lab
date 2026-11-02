@@ -12,6 +12,7 @@ FILES
   client.py      Sender
   demo_files\    Ready-made files to send:
                    sample_script.py, sample_text.txt, sample_audio.wav, sample_video.mp4
+  simple\        Shorter version of the lab (see SIMPLE VERSION below)
 
 SETUP (DO THIS ONCE ON EACH COMPUTER)
 -------------------------------------
@@ -73,6 +74,37 @@ Open the received_files folder. Play sample_audio.wav (3 second tone) and sample
     Ubuntu : cmp demo_files/sample_video.mp4 received_files/sample_video.mp4
 
 Windows prints "no differences encountered". Ubuntu prints nothing when the files match.
+
+SIMPLE VERSION (simple FOLDER)
+------------------------------
+The simple folder has a shorter version of the same lab. It sends one file at a time and has
+no sequence numbers or retransmission, so it is easier to explain.
+
+The server exits after one file, which frees the port. Start it again for each file.
+
+You need two terminals, both inside the simple folder.
+
+Terminal 1:  python server.py
+             Shows: UDP Server is waiting for file...
+Terminal 2:  python client.py
+             Enter file name: ../demo_files/sample_text.txt
+
+Client shows:  File sent successfully!
+Server shows:  File received successfully!
+               Saved as: received_sample_text.txt
+
+The file is saved in the simple folder. Repeat both commands for the other three demo files:
+    ../demo_files/sample_script.py
+    ../demo_files/sample_audio.wav
+    ../demo_files/sample_video.mp4
+
+For two computers, add the server's IP: python client.py 192.168.1.35
+
+Limits of the simple version:
+- If a packet is lost, the program waits forever. Press Ctrl+C or close the terminal, then start
+  the server again.
+- If you copy only the simple folder, type the path of a file that exists on that computer.
+- Start the server first. On Windows, the client crashes with WinError 10054 if no server is running.
 
 TWO COMPUTERS
 -------------

@@ -12,6 +12,7 @@ FILES
   calc_server.py, calc_client.py     Task 3
   server_files\                      Files the file server can send:
                                        sample.txt, sample_image.png
+  simple\                            Shorter versions of all three tasks (see SIMPLE VERSION)
 
 SETUP (DO THIS ONCE ON EACH COMPUTER)
 -------------------------------------
@@ -85,6 +86,40 @@ Other results:
     7 / 0   Division by zero!
     7 % 2   Invalid operator!
     abc + 2 Invalid input!
+
+SIMPLE VERSION (simple FOLDER)
+------------------------------
+The simple folder has shorter versions of all three tasks, with the same ports. The commands
+are the same as above, but run them inside the simple folder.
+
+Each server handles one client and then exits, so start it again for each run.
+
+Task 1:  Terminal 1: python hello_server.py
+         Terminal 2: python hello_client.py
+         Client shows: Server: Hello Client!
+
+Task 2:  Terminal 1: python file_server.py
+         Terminal 2: python file_client.py
+                     Enter file name: sample.txt
+         Client shows: File received successfully!
+         The file is saved in the simple folder as received_sample.txt.
+         The server reads from ..\server_files. Enter only the file name, not a path.
+         A name that does not exist gives: File not found on server!
+
+Task 3:  Terminal 1: python calc_server.py
+         Terminal 2: python calc_client.py
+                     Enter first number: 7
+                     Enter operator (+, -, *, /): +
+                     Enter second number: 5
+         Client shows: Result: 12.0
+         Dividing by zero or using another operator gives: Result: Invalid operation!
+
+For two computers, add the server's IP: python hello_client.py 192.168.1.35
+
+Limits of the simple version:
+- The calculator expects real numbers. Typing letters stops the server with an error, so start
+  it again.
+- If you copy only the simple folder, also copy server_files beside it for Task 2.
 
 TWO COMPUTERS
 -------------
