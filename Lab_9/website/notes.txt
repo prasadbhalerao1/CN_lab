@@ -1,0 +1,2 @@
+Computer Networks Lab - Experiment 9
+This is a demo text file. The web server sends it with the content type text/plain.

@@ -1,0 +1,4 @@
+Computer Networks Lab - Experiment 5
+This is a demo text file sent from the UDP client to the UDP server.
+Each packet carries a 4-byte sequence number and up to 1024 bytes of data.
+The server acknowledges every packet (stop-and-wait).
